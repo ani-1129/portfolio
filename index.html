@@ -722,7 +722,7 @@ function startTyped(){
 // COUNTERS
 function startCounters(){
   const cnt=(id,target,dec)=>{let v=0;const el=document.getElementById(id);const ti=setInterval(()=>{v+=target/50;if(v>=target){el.textContent=target.toFixed(dec);clearInterval(ti);}else el.textContent=v.toFixed(dec);},22);};
-  cnt('s1',2,0);cnt('s2',7,0);cnt('s3',2,0);cnt('s4',7.74,2);
+  cnt('s1',4,0);cnt('s2',7,0);cnt('s3',2,0);cnt('s4',7.74,2);
 }
 
 // INTERSECTION OBSERVER
