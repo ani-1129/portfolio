@@ -133,10 +133,7 @@ export default function Login() {
             </button>
           </form>
 
-          {/* Hint */}
-          <div className="mt-7 pt-5 text-center text-[10px] font-mono" style={{ borderTop: '1px solid rgba(0,229,255,0.08)', color: '#4b5563' }}>
-            Default: <span style={{ color: '#00E5FF' }}>admin</span> / <span style={{ color: '#00E5FF' }}>admin123</span>
-          </div>
+          {/* Hint Removed for Security */}
         </div>
       </div>
     </div>
