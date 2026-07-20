@@ -210,5 +210,28 @@ export const projectsData = [
     ],
     tags: ["Salesforce", "Apex", "LWC", "CRM", "Flows"],
     github: "https://github.com/ani-1129"
+  },
+  {
+    id: "data-visualization-fifa",
+    title: "Data Visualization & Analytics (FIFA 2026)",
+    subtitle: "Exploratory Data Analysis Showcase",
+    category: "data",
+    featured: true,
+    num: "10",
+    status: "Completed",
+    image: "https://images.unsplash.com/photo-1551288049-bebda4e38f71?auto=format&fit=crop&w=1200&q=80",
+    description: "In-depth exploratory data analysis and visual storytelling utilizing 54,602 player performance records leading up to the FIFA World Cup 2026.",
+    metrics: [
+      { label: "Records", value: "54,602" },
+      { label: "Features", value: "75" },
+      { label: "Type", value: "EDA" }
+    ],
+    highlights: [
+      "Analyzed key valuation trends, demographic metrics, and playing style correlations to help sport organizations make data-driven scouting decisions.",
+      "Identified that valuations grow exponentially once overall ratings surpass 8.0, showcasing 'The Superstar Premium'.",
+      "Discovered defensive value gaps and physical trait arbitrages using Pandas, Matplotlib, and Seaborn."
+    ],
+    tags: ["Python", "Pandas", "NumPy", "Matplotlib", "Seaborn", "Jupyter"],
+    github: "https://github.com/ani-1129/CodeAlpha_Data-Visualization"
   }
 ];
