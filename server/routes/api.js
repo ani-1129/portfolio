@@ -244,7 +244,7 @@ function authenticateToken(req, res, next) {
 // AUTH
 router.post('/auth/login', async (req, res) => {
   const { username, password } = req.body;
-  if (username === 'admin' && password === 'aniiket@Sin29') {
+  if (username === 'admin' && password === 'aniket@Sin29') {
     const token = jwt.sign({ userId: 'admin_id', username: 'admin', role: 'admin' }, JWT_SECRET, { expiresIn: '7d' });
     return res.json({ token, user: { id: 'admin_id', username: 'admin', role: 'admin' } });
   }
