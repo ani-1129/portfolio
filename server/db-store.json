@@ -1,0 +1,878 @@
+{
+  "hero": {
+    "name": "ANIKET SINGH",
+    "subtitle": "FULL STACK WEB DEVELOPER & DATA ANALYST",
+    "typingTexts": [
+      "RAG AI Applications",
+      "Interactive Data Dashboards",
+      "Full-Stack Web Platforms",
+      "Machine Learning Pipelines"
+    ],
+    "description": "MCA student with a passion for shipping real products. I turn raw data into interactive dashboards, business problems into AI solutions, and ideas into modern web experiences.",
+    "profileImage": "profile_image.jpeg",
+    "statusBadge": "Available for Roles & Internships"
+  },
+  "navbar": {
+    "logoText": "Aniket.Singh",
+    "menuItems": [
+      {
+        "label": "Home",
+        "href": "#hero",
+        "order": 1
+      },
+      {
+        "label": "About",
+        "href": "#about",
+        "order": 2
+      },
+      {
+        "label": "Skills",
+        "href": "#skills",
+        "order": 3
+      },
+      {
+        "label": "Projects",
+        "href": "#projects",
+        "order": 4
+      },
+      {
+        "label": "Timeline",
+        "href": "#timeline",
+        "order": 5
+      },
+      {
+        "label": "Services",
+        "href": "#services",
+        "order": 6
+      },
+      {
+        "label": "Contact",
+        "href": "#contact",
+        "order": 7
+      }
+    ],
+    "resumeBtnText": "Resume"
+  },
+  "about": {
+    "heading": "Driven by Data, Powered by Code",
+    "biography": [
+      "I'm Aniket Singh, an MCA student building at the intersection of data analytics, web development, and AI engineering.",
+      "My technical core spans Python, Java, SQL, and JavaScript, with hands-on experience deploying production backend microservices."
+    ],
+    "checklist": [
+      "Responsive Websites",
+      "AI Applications & RAG",
+      "Dashboard Development",
+      "API Systems & Auth",
+      "Database Architecture"
+    ]
+  },
+  "stats": [
+    {
+      "num": "8+",
+      "label": "Projects Completed",
+      "desc": "AI Platforms, Web Apps & ML Dashboards"
+    },
+    {
+      "num": "50+",
+      "label": "LeetCode Solved",
+      "desc": "Data Structures & Algorithmic Logic"
+    },
+    {
+      "num": "34+",
+      "label": "Technologies",
+      "desc": "Python, React, FastAPI, SQL, RAG, Docker"
+    },
+    {
+      "num": "8.43",
+      "label": "MCA CGPA",
+      "desc": "Software Engineering & Cloud Focus"
+    }
+  ],
+  "projects": [
+    {
+      "_id": "proj_1784573149919",
+      "id": "proj_1784572927418",
+      "title": "Exploratory-Data-Analysis-EDA",
+      "subtitle": "",
+      "category": "dashboards",
+      "featured": false,
+      "num": "09",
+      "status": "Completed",
+      "published": true,
+      "image": "/uploads/thumbnail-1784575851697-878781063.png",
+      "description": "Understanding the factors that influence used car prices is critical for pricing models, procurement decisions, and consumer analytics. This analysis profiles vehicle traits (such as engine features, mileage, brand, and fuel type) to evaluate their direct impact on selling prices and depreciation rates.",
+      "metrics": [
+        {
+          "label": "Metric",
+          "value": "1.0"
+        }
+      ],
+      "highlights": [
+        "System architecture highlight"
+      ],
+      "tags": [
+        "Python 3.10+",
+        "Pandas",
+        "NumPy",
+        "Matplotlib",
+        "Seaborn",
+        "SciPy"
+      ],
+      "github": "https://github.com/ani-1129/Exploratory-Data-Analysis-EDA",
+      "demo": "",
+      "apiDocs": ""
+    },
+    {
+      "id": "fraud-detection",
+      "title": "Financial Fraud Detection AI",
+      "subtitle": "Real-Time Intelligence Dashboard",
+      "category": "dashboards",
+      "featured": false,
+      "num": "02",
+      "status": "Completed",
+      "image": "https://images.unsplash.com/photo-1563986768609-322da13575f3?auto=format&fit=crop&w=1200&q=80",
+      "description": "AI-powered fraud intelligence dashboard analyzing financial transactions in real time, surfacing suspicious anomaly patterns through 15+ interactive visualizations.",
+      "metrics": [
+        {
+          "label": "Visual Charts",
+          "value": "15+"
+        },
+        {
+          "label": "Latency",
+          "value": "<150ms"
+        },
+        {
+          "label": "Risk Radar",
+          "value": "Real-Time"
+        }
+      ],
+      "highlights": [
+        "Glassmorphism dashboard with 15 interactive Plotly charts for fraud trends, anomaly risk scores, and geographic transaction hotspots.",
+        "Multi-dimensional filters by payment method, city, fraud status, custom date range, and risk severity.",
+        "One-click timestamped CSV data export for regulatory compliance and downstream audit workflows."
+      ],
+      "tags": [
+        "Python",
+        "Streamlit",
+        "Plotly",
+        "Pandas",
+        "NumPy",
+        "Scikit-Learn"
+      ],
+      "github": "https://github.com/ani-1129",
+      "demo": "https://fraud-detection-system-by-aniket-singh.streamlit.app/",
+      "_id": "fraud-detection"
+    },
+    {
+      "id": "ecommerce-sentiment",
+      "title": "E-Commerce Sentiment & Pricing Engine",
+      "subtitle": "Dynamic Pricing & Review Intelligence",
+      "category": "ai",
+      "featured": false,
+      "num": "03",
+      "status": "Completed",
+      "image": "https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&w=1200&q=80",
+      "description": "AI-driven pricing engine converting customer reviews into sentiment metrics and recommending optimized dynamic price adjustments across a 5-page analytics dashboard.",
+      "metrics": [
+        {
+          "label": "Dashboard Pages",
+          "value": "5"
+        },
+        {
+          "label": "LLM Model",
+          "value": "Llama 3.2"
+        },
+        {
+          "label": "Sentiment Scale",
+          "value": "-1 to +1"
+        }
+      ],
+      "highlights": [
+        "Local LLM (Ollama llama3.2) converts star ratings and raw customer reviews into exact sentiment scores (-1.0 to +1.0).",
+        "5-page Streamlit analytics suite with 15+ Plotly charts covering product performance, price elasticity, and review polarity.",
+        "Dynamic pricing engine calculating price change recommendations based on sentiment momentum and competitive benchmarks."
+      ],
+      "tags": [
+        "Python",
+        "Streamlit",
+        "Plotly",
+        "PostgreSQL",
+        "Ollama",
+        "LLM",
+        "NLP"
+      ],
+      "github": "https://github.com/ani-1129/ecommerce-sentiment-pricing",
+      "demo": "https://ecommerce-sentiment-pricing-mdndwngpuggu4jpsyfajrp.streamlit.app/",
+      "_id": "ecommerce-sentiment"
+    },
+    {
+      "id": "telecom-churn",
+      "title": "Telecom Customer Churn Prediction System",
+      "subtitle": "ML Model Deployment & Analytics",
+      "category": "ai",
+      "featured": false,
+      "num": "04",
+      "status": "Completed",
+      "image": "https://images.unsplash.com/photo-1551836022-d5d88e9218df?auto=format&fit=crop&w=1200&q=80",
+      "description": "End-to-end machine learning ecosystem for predicting customer churn for 7,043 telecom accounts, complete with FastAPI REST service, MLflow tracking, and Docker Compose orchestration.",
+      "metrics": [
+        {
+          "label": "Dataset Size",
+          "value": "7,043"
+        },
+        {
+          "label": "Balancing",
+          "value": "SMOTE"
+        },
+        {
+          "label": "Tracking",
+          "value": "MLflow"
+        }
+      ],
+      "highlights": [
+        "Full predictive pipeline engineered for 7,043 accounts with SMOTE oversampling and automated model evaluation.",
+        "Secure FastAPI REST API with bearer token authentication, batch inference endpoints, and structured churn probability outputs.",
+        "Docker Compose containerization with Nginx reverse proxy, MLflow experiment tracking, and live Streamlit scoring portal."
+      ],
+      "tags": [
+        "Python",
+        "FastAPI",
+        "Streamlit",
+        "MLflow",
+        "Docker",
+        "scikit-learn"
+      ],
+      "github": "https://github.com/ani-1129/telecom-churn-ml",
+      "demo": "https://churn-dashboard-zszi.onrender.com/",
+      "apiDocs": "https://churn-api-tmje.onrender.com/docs",
+      "_id": "telecom-churn"
+    },
+    {
+      "id": "ai-job-agent",
+      "title": "AI Job Application & Resume Agent",
+      "subtitle": "Autonomous Career Assistant",
+      "category": "ai",
+      "featured": false,
+      "num": "05",
+      "status": "Completed",
+      "image": "https://images.unsplash.com/photo-1507679799987-c73779587ccf?auto=format&fit=crop&w=1200&q=80",
+      "description": "Autonomous AI agent leveraging LLMs and RAG to match job requirements, tailor resumes in real time, and generate customized cover letters for recruiters.",
+      "metrics": [
+        {
+          "label": "Match Score",
+          "value": "95%"
+        },
+        {
+          "label": "Generation",
+          "value": "<5s"
+        },
+        {
+          "label": "Formats",
+          "value": "PDF / MD"
+        }
+      ],
+      "highlights": [
+        "Parses job descriptions using Gemini/OpenAI API to extract key missing skill keywords and candidate match scores.",
+        "Tailors resume bullet points dynamically based on targeted job specifications while preserving authentic facts.",
+        "Generates recruiter email pitches and cover letters tailored to individual company cultures."
+      ],
+      "tags": [
+        "Python",
+        "LangChain",
+        "Gemini API",
+        "React",
+        "FastAPI"
+      ],
+      "github": "https://github.com/ani-1129",
+      "demo": "https://github.com/ani-1129",
+      "_id": "ai-job-agent"
+    },
+    {
+      "id": "ai-computer-agent",
+      "title": "AI Computer Control & Vision Agent",
+      "subtitle": "Autonomous GUI Navigation System",
+      "category": "ai",
+      "featured": false,
+      "num": "06",
+      "status": "Completed",
+      "image": "https://images.unsplash.com/photo-1618005182384-a83a8bd57fbe?auto=format&fit=crop&w=1200&q=80",
+      "description": "Multimodal AI agent capable of understanding screen coordinates, executing OS terminal commands, and automating complex web navigation tasks.",
+      "metrics": [
+        {
+          "label": "Vision LLM",
+          "value": "Multimodal"
+        },
+        {
+          "label": "Execution",
+          "value": "Local Sandbox"
+        },
+        {
+          "label": "Automation",
+          "value": "Web & OS"
+        }
+      ],
+      "highlights": [
+        "Combines vision language models with desktop automation tools to perform multi-step web workflows.",
+        "Parses DOM states and visual cues to fill forms, extract dynamic data, and execute tasks without human intervention."
+      ],
+      "tags": [
+        "Python",
+        "OpenAI",
+        "Playwright",
+        "Computer Vision",
+        "FastAPI"
+      ],
+      "github": "https://github.com/ani-1129",
+      "demo": "https://github.com/ani-1129",
+      "_id": "ai-computer-agent"
+    },
+    {
+      "id": "alumni-connect",
+      "title": "Alumni Connect Platform",
+      "subtitle": "Full-Stack Networking Portal",
+      "category": "fullstack",
+      "featured": false,
+      "num": "07",
+      "status": "Completed",
+      "image": "https://images.unsplash.com/photo-1522071820081-009f0129c71c?auto=format&fit=crop&w=1200&q=80",
+      "description": "Full-stack web application designed for university alumni networking, job postings, and knowledge sharing — bridging students with industry mentors.",
+      "metrics": [
+        {
+          "label": "Architecture",
+          "value": "MVC"
+        },
+        {
+          "label": "DBMS",
+          "value": "MySQL"
+        },
+        {
+          "label": "Responsiveness",
+          "value": "100%"
+        }
+      ],
+      "highlights": [
+        "Structured DBMS schema optimizing search performance across student profiles, alumni directories, and job listings.",
+        "Full CRUD functionality for blog publishing, event RSVPs, and alumni messaging.",
+        "Mobile-responsive web interface built with pure CSS3 and vanilla JavaScript for high accessibility."
+      ],
+      "tags": [
+        "HTML5",
+        "CSS3",
+        "JavaScript",
+        "PHP",
+        "MySQL"
+      ],
+      "github": "https://github.com/ani-1129",
+      "_id": "alumni-connect"
+    },
+    {
+      "id": "salesforce-crm",
+      "title": "Salesforce CRM Mini-App",
+      "subtitle": "Custom Objects & LWC Development",
+      "category": "cloud",
+      "featured": false,
+      "num": "09",
+      "status": "In Progress",
+      "image": "https://images.unsplash.com/photo-1551288049-bebda4e38f71?auto=format&fit=crop&w=1200&q=80",
+      "description": "Enterprise exploration in Salesforce Developer Edition implementing custom objects, automated record flows, Apex triggers, and Lightning Web Components (LWC).",
+      "metrics": [
+        {
+          "label": "Platform",
+          "value": "Salesforce"
+        },
+        {
+          "label": "Tech",
+          "value": "Apex & LWC"
+        }
+      ],
+      "highlights": [
+        "Custom object model designed for tracking customer cases, automated escalation rules, and status triggers.",
+        "Lightning Web Components (LWC) interface built for quick case updates and manager analytics dashboards."
+      ],
+      "tags": [
+        "Salesforce",
+        "Apex",
+        "LWC",
+        "CRM",
+        "Flows"
+      ],
+      "github": "https://github.com/ani-1129",
+      "_id": "salesforce-crm"
+    }
+  ],
+  "skills": [
+    {
+      "name": "React",
+      "level": 85,
+      "icon": "Code2",
+      "tag": "Primary",
+      "category": "frontend",
+      "_id": "React"
+    },
+    {
+      "name": "Next.js",
+      "level": 80,
+      "icon": "Globe",
+      "tag": "Framework",
+      "category": "frontend",
+      "_id": "Next.js"
+    },
+    {
+      "name": "JavaScript (ES6+)",
+      "level": 88,
+      "icon": "FileCode",
+      "tag": "Core",
+      "category": "frontend",
+      "_id": "JavaScript (ES6+)"
+    },
+    {
+      "name": "Tailwind CSS",
+      "level": 90,
+      "icon": "Palette",
+      "tag": "Styling",
+      "category": "frontend",
+      "_id": "Tailwind CSS"
+    },
+    {
+      "name": "HTML5 / CSS3",
+      "level": 92,
+      "icon": "Layers",
+      "tag": "Foundation",
+      "category": "frontend",
+      "_id": "HTML5 / CSS3"
+    },
+    {
+      "name": "Responsive UI",
+      "level": 95,
+      "icon": "Smartphone",
+      "tag": "Design",
+      "category": "frontend",
+      "_id": "Responsive UI"
+    },
+    {
+      "name": "FastAPI",
+      "level": 85,
+      "icon": "Zap",
+      "tag": "Python API",
+      "category": "backend",
+      "_id": "FastAPI"
+    },
+    {
+      "name": "Python",
+      "level": 90,
+      "icon": "Terminal",
+      "tag": "Primary",
+      "category": "backend",
+      "_id": "Python"
+    },
+    {
+      "name": "Node.js / Express",
+      "level": 78,
+      "icon": "Cpu",
+      "tag": "Runtime",
+      "category": "backend",
+      "_id": "Node.js / Express"
+    },
+    {
+      "name": "Java",
+      "level": 80,
+      "icon": "Code",
+      "tag": "OOP",
+      "category": "backend",
+      "_id": "Java"
+    },
+    {
+      "name": "PHP",
+      "level": 75,
+      "icon": "FileCode2",
+      "tag": "Web",
+      "category": "backend",
+      "_id": "PHP"
+    },
+    {
+      "name": "RESTful APIs / JWT",
+      "level": 88,
+      "icon": "KeyRound",
+      "tag": "Security",
+      "category": "backend",
+      "_id": "RESTful APIs / JWT"
+    },
+    {
+      "name": "SQL (Complex Queries)",
+      "level": 88,
+      "icon": "Database",
+      "tag": "Analytics",
+      "category": "data",
+      "_id": "SQL (Complex Queries)"
+    },
+    {
+      "name": "Pandas & NumPy",
+      "level": 85,
+      "icon": "Binary",
+      "tag": "Data Processing",
+      "category": "data",
+      "_id": "Pandas & NumPy"
+    },
+    {
+      "name": "Streamlit & Plotly",
+      "level": 90,
+      "icon": "PieChart",
+      "tag": "Dashboards",
+      "category": "data",
+      "_id": "Streamlit & Plotly"
+    },
+    {
+      "name": "Power BI",
+      "level": 70,
+      "icon": "Activity",
+      "tag": "BI Tools",
+      "category": "data",
+      "_id": "Power BI"
+    },
+    {
+      "name": "Data Cleaning / EDA",
+      "level": 88,
+      "icon": "FileSpreadsheet",
+      "tag": "Insights",
+      "category": "data",
+      "_id": "Data Cleaning / EDA"
+    },
+    {
+      "name": "RAG Architecture",
+      "level": 85,
+      "icon": "Network",
+      "tag": "Vector Search",
+      "category": "ai",
+      "_id": "RAG Architecture"
+    },
+    {
+      "name": "OpenAI & Gemini APIs",
+      "level": 88,
+      "icon": "Sparkles",
+      "tag": "LLMs",
+      "category": "ai",
+      "_id": "OpenAI & Gemini APIs"
+    },
+    {
+      "name": "LangChain / Ollama",
+      "level": 82,
+      "icon": "Workflow",
+      "tag": "Orchestration",
+      "category": "ai",
+      "_id": "LangChain / Ollama"
+    },
+    {
+      "name": "Qdrant Vector DB",
+      "level": 80,
+      "icon": "DatabaseBackup",
+      "tag": "Embeddings",
+      "category": "ai",
+      "_id": "Qdrant Vector DB"
+    },
+    {
+      "name": "scikit-learn & MLflow",
+      "level": 80,
+      "icon": "LineChart",
+      "tag": "ML Modeling",
+      "category": "ai",
+      "_id": "scikit-learn & MLflow"
+    },
+    {
+      "name": "Sentiment & NLP",
+      "level": 82,
+      "icon": "MessageSquareText",
+      "tag": "Text Analytics",
+      "category": "ai",
+      "_id": "Sentiment & NLP"
+    },
+    {
+      "name": "PostgreSQL",
+      "level": 82,
+      "icon": "Database",
+      "tag": "Relational",
+      "category": "database",
+      "_id": "PostgreSQL"
+    },
+    {
+      "name": "MySQL / DBMS",
+      "level": 86,
+      "icon": "Table",
+      "tag": "SQL",
+      "category": "database",
+      "_id": "MySQL / DBMS"
+    },
+    {
+      "name": "Qdrant",
+      "level": 80,
+      "icon": "Search",
+      "tag": "Vector DB",
+      "category": "database",
+      "_id": "Qdrant"
+    },
+    {
+      "name": "MongoDB",
+      "level": 75,
+      "icon": "Box",
+      "tag": "NoSQL",
+      "category": "database",
+      "_id": "MongoDB"
+    },
+    {
+      "name": "Redis",
+      "level": 72,
+      "icon": "Flame",
+      "tag": "Caching",
+      "category": "database",
+      "_id": "Redis"
+    },
+    {
+      "name": "SQLite",
+      "level": 85,
+      "icon": "FileBox",
+      "tag": "Embedded",
+      "category": "database",
+      "_id": "SQLite"
+    },
+    {
+      "name": "Docker & Compose",
+      "level": 82,
+      "icon": "Container",
+      "tag": "Containers",
+      "category": "devops",
+      "_id": "Docker & Compose"
+    },
+    {
+      "name": "Git & GitHub",
+      "level": 90,
+      "icon": "GitBranch",
+      "tag": "Version Control",
+      "category": "devops",
+      "_id": "Git & GitHub"
+    },
+    {
+      "name": "Nginx & Render",
+      "level": 80,
+      "icon": "Server",
+      "tag": "Deployment",
+      "category": "devops",
+      "_id": "Nginx & Render"
+    },
+    {
+      "name": "Salesforce CRM (LWC)",
+      "level": 75,
+      "icon": "CloudCog",
+      "tag": "Enterprise",
+      "category": "devops",
+      "_id": "Salesforce CRM (LWC)"
+    },
+    {
+      "name": "C / C++",
+      "level": 78,
+      "icon": "Code",
+      "tag": "Core CS",
+      "category": "devops",
+      "_id": "C / C++"
+    }
+  ],
+  "timeline": {
+    "education": [
+      {
+        "period": "2025 – 2027 (Current)",
+        "title": "Master of Computer Applications (MCA)",
+        "institution": "Institute of Technology",
+        "grade": "CGPA: 8 / 10",
+        "badge": "Pursuing",
+        "details": "Advanced study focused on Software Engineering, Distributed Systems, Cloud Architecture, Artificial Intelligence, and Data Analytics.",
+        "courses": [
+          "Distributed Systems",
+          "Advanced DBMS",
+          "Cloud Computing",
+          "AI & Neural Networks"
+        ]
+      },
+      {
+        "period": "2022 – 2025",
+        "title": "Bachelor of Computer Applications (BCA)",
+        "institution": "Mahatma Gandhi Kashi Vidyapith",
+        "grade": "67.7%",
+        "badge": "Graduated",
+        "details": "Core computer science foundation covering Data Structures, Algorithms, Object-Oriented Programming (Java), Web Development, and Relational Database Systems.",
+        "courses": [
+          "Java & OOP",
+          "DBMS & SQL",
+          "PHP Web Dev",
+          "Data Structures",
+          "Computer Networks"
+        ]
+      },
+      {
+        "period": "2020 – 2022",
+        "title": "Class 12 — Senior Secondary (CBSE)",
+        "institution": "CBSE Board",
+        "grade": "63.8%",
+        "badge": "Science Stream",
+        "details": "Focus on Mathematics, Physics, Chemistry, and Computer Science fundamentals."
+      },
+      {
+        "period": "2019 – 2020",
+        "title": "Class 10 — Secondary Education (CBSE)",
+        "institution": "CBSE Board",
+        "grade": "67.0%",
+        "badge": "Completed",
+        "details": "Mathematics, Science, English Literature, and Social Sciences."
+      }
+    ],
+    "certifications": [
+      {
+        "title": "SQL — Intermediate",
+        "issuer": "HackerRank",
+        "date": "Verified Certification",
+        "status": "Verified",
+        "icon": "Database",
+        "link": "https://www.hackerrank.com/certificates/iframe/sql_intermediate"
+      },
+      {
+        "title": "React — Basic",
+        "issuer": "HackerRank",
+        "date": "Verified Certification",
+        "status": "Verified",
+        "icon": "Code2",
+        "link": "https://www.hackerrank.com/certificates/iframe/react_basic"
+      },
+      {
+        "title": "Salesforce Fundamentals",
+        "issuer": "Salesforce Trailhead",
+        "date": "In Progress",
+        "status": "Active Learning",
+        "icon": "Cloud",
+        "link": "https://trailhead.salesforce.com"
+      },
+      {
+        "title": "AI & CRM Automation",
+        "issuer": "Active Learning & Projects",
+        "date": "In Progress",
+        "status": "Active Learning",
+        "icon": "Bot",
+        "link": "#projects"
+      }
+    ]
+  },
+  "services": [
+    {
+      "id": "web-dev",
+      "title": "Full Stack Web Development",
+      "icon": "Layout",
+      "description": "Building responsive, modern, high-performance web applications using React, Next.js, and Tailwind CSS with fluid Framer Motion animations.",
+      "deliverables": [
+        "Single & Multi-Page Apps",
+        "Custom Component Design Systems",
+        "API Integration & State Management",
+        "SEO & Lighthouse Optimization"
+      ],
+      "_id": "web-dev"
+    },
+    {
+      "id": "data-dashboards",
+      "title": "Data Analytics & Dashboards",
+      "icon": "BarChart2",
+      "description": "Transforming raw dataset chaos into actionable interactive business dashboards featuring 15+ real-time charts using Streamlit, Plotly, and Power BI.",
+      "deliverables": [
+        "Interactive Risk Radar Charts",
+        "Automated Data Cleaning Pipelines",
+        "One-Click CSV Export Reports",
+        "Executive KPI Indicators"
+      ],
+      "_id": "data-dashboards"
+    },
+    {
+      "id": "ai-rag",
+      "title": "AI Systems & RAG Platforms",
+      "icon": "Bot",
+      "description": "Engineering production-ready Retrieval-Augmented Generation (RAG) pipelines, vector search engines, and automated agent workflows using LLMs.",
+      "deliverables": [
+        "PII Masking & Text Sanitization",
+        "Qdrant Vector DB Indexing",
+        "Cross-Encoder Reranking",
+        "Streamlit & React Agent Interfaces"
+      ],
+      "_id": "ai-rag"
+    },
+    {
+      "id": "backend-apis",
+      "title": "Backend APIs & Microservices",
+      "icon": "Server",
+      "description": "Designing fast, secure, scalable RESTful APIs with FastAPI and Node.js complete with OAuth2 JWT security, rate-limiting, and Swagger docs.",
+      "deliverables": [
+        "FastAPI & Express REST Endpoints",
+        "Bearer Token Authentication",
+        "Docker Compose Packaging",
+        "Nginx Reverse Proxy Deployment"
+      ],
+      "_id": "backend-apis"
+    },
+    {
+      "id": "database",
+      "title": "Database Engineering & SQL",
+      "icon": "Database",
+      "description": "Architecting normalized relational schemas and high-speed query indexes in PostgreSQL, MySQL, and SQLite to keep user data lightning fast.",
+      "deliverables": [
+        "Complex SQL Analytical Queries",
+        "Database Schema Optimization",
+        "Migration & Seed Scripts",
+        "Vector Embeddings Storage"
+      ],
+      "_id": "database"
+    },
+    {
+      "id": "crm-automation",
+      "title": "Enterprise CRM & Automation",
+      "icon": "Workflow",
+      "description": "Creating automated business workflows, Python web scraping agents, and Salesforce custom objects and Lightning Web Components (LWC).",
+      "deliverables": [
+        "Salesforce Objects & Flows",
+        "Apex Triggers & LWC Interfaces",
+        "Automated Python Task Scripts",
+        "Data Ingestion Workflows"
+      ],
+      "_id": "crm-automation"
+    }
+  ],
+  "testimonials": [],
+  "contact": {
+    "email": "singh.ani2911@gmail.com",
+    "phone": "+91 83819 51053",
+    "location": "India",
+    "github": "https://github.com/ani-1129",
+    "linkedin": "https://linkedin.com/in/aniket-singh-185770291",
+    "leetcode": "https://leetcode.com/u/ani-1129/"
+  },
+  "messages": [],
+  "resume": {
+    "fileUrl": "resume.pdf",
+    "fileName": "resume.pdf",
+    "version": "1.0"
+  },
+  "seo": {
+    "metaTitle": "Aniket Singh — Full Stack Developer & Data Analyst",
+    "metaDescription": "MCA Student, Full Stack Developer, Data Analyst & AI Enthusiast.",
+    "keywords": "Aniket Singh, Portfolio, Web Developer, Data Analyst, React, FastAPI",
+    "ogImage": "photo.jpg"
+  },
+  "theme": {
+    "accentColor": "#3B82F6",
+    "darkBgColor": "#030712",
+    "cardBgColor": "#0B132B",
+    "fontFamily": "Sora",
+    "cursorStyle": "spotlight"
+  },
+  "media": [
+    {
+      "_id": "media_1784572798741",
+      "fileName": "profilephoto.jpeg",
+      "url": "/uploads/file-1784572798734-668574198.jpeg",
+      "mimeType": "image/jpeg",
+      "size": 101008
+    }
+  ]
+}

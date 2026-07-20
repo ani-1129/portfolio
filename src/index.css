@@ -1,0 +1,282 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=JetBrains+Mono:wght@400;500;700&family=Poppins:wght@300;400;500;600;700;800&family=Sora:wght@300;400;600;700;800&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* ─── CSS Design Tokens ─── */
+:root {
+  --accent-color: #00E5FF;
+  --accent-secondary: #009DFF;
+  --accent-highlight: #7DF9FF;
+  --accent-glow: rgba(0, 229, 255, 0.35);
+  --dark-bg: #05070D;
+  --dark-secondary: #0A101A;
+  --card-bg: #111827;
+  --border-color: rgba(0, 255, 255, 0.08);
+  --font-family: 'Sora', sans-serif;
+}
+
+/* ─── Base Reset ─── */
+body {
+  background-color: var(--dark-bg, #05070D) !important;
+  color: #FFFFFF;
+  font-family: var(--font-family, 'Sora', sans-serif) !important;
+  overflow-x: hidden;
+  transition: background-color 0.4s ease;
+}
+
+/* ─── Global Cursor for Public Site ─── */
+body:not(.admin-mode) {
+  cursor: none;
+}
+
+/* ─── Admin Panel Cursors ─── */
+.admin-panel, .admin-panel * {
+  cursor: auto !important;
+}
+.admin-panel button, .admin-panel a, .admin-panel input, .admin-panel select, .admin-panel textarea, .admin-panel label, .admin-panel [role="button"] {
+  cursor: pointer !important;
+}
+.admin-panel input[type="text"], .admin-panel input[type="password"], .admin-panel textarea {
+  cursor: text !important;
+}
+
+/* ─── Text Selection ─── */
+::selection {
+  background: rgba(0, 229, 255, 0.25);
+  color: #ffffff;
+}
+
+/* ─── Glass Panel (Glassmorphism) ─── */
+.glass-panel {
+  background: rgba(17, 24, 39, 0.7) !important;
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border: 1px solid var(--border-color, rgba(0, 255, 255, 0.08));
+  box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.5), inset 0 1px 0 rgba(255,255,255,0.05);
+  transition: background 0.3s ease, border-color 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.glass-panel-hover {
+  transition: all 0.35s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.glass-panel-hover:hover {
+  border-color: rgba(0, 229, 255, 0.35) !important;
+  transform: translateY(-4px);
+  box-shadow: 0 20px 40px -15px rgba(0, 229, 255, 0.25), 0 0 0 1px rgba(0,229,255,0.1) !important;
+}
+
+/* ─── Gradient Text ─── */
+.mint-gradient-text {
+  background: linear-gradient(135deg, #FFFFFF 0%, #7DF9FF 40%, #00E5FF 70%, #009DFF 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.cyan-gradient-text {
+  background: linear-gradient(90deg, #00E5FF, #009DFF);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+/* ─── Glow Shadow ─── */
+.shadow-mint-glow {
+  box-shadow: 0 0 30px -5px rgba(0, 229, 255, 0.45) !important;
+}
+
+.shadow-cyan-glow {
+  box-shadow: 0 0 25px rgba(0, 229, 255, 0.20);
+}
+
+/* ─── Custom Scrollbar ─── */
+::-webkit-scrollbar {
+  width: 5px;
+}
+::-webkit-scrollbar-track {
+  background: var(--dark-bg, #05070D);
+}
+::-webkit-scrollbar-thumb {
+  background: rgba(0, 229, 255, 0.2);
+  border-radius: 9999px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: var(--accent-color, #00E5FF);
+}
+
+/* ─── No Scrollbar (tabs/carousels) ─── */
+.no-scrollbar::-webkit-scrollbar { display: none; }
+.no-scrollbar { -ms-overflow-style: none; scrollbar-width: none; }
+
+/* ─── Background Grid Pattern ─── */
+.bg-grid-pattern {
+  background-size: 50px 50px;
+  background-image:
+    linear-gradient(to right, rgba(0, 229, 255, 0.025) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(0, 229, 255, 0.025) 1px, transparent 1px);
+}
+
+/* ─── Animated Rings ─── */
+@keyframes ring-pulse {
+  0% { transform: scale(1); opacity: 0.6; }
+  100% { transform: scale(1.6); opacity: 0; }
+}
+
+.ring-pulse {
+  animation: ring-pulse 2s ease-out infinite;
+}
+
+/* ─── Float Animation ─── */
+@keyframes float {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-10px); }
+}
+
+.animate-float {
+  animation: float 5s ease-in-out infinite;
+}
+
+/* ─── Glow Pulse ─── */
+@keyframes glow-pulse {
+  0%, 100% { box-shadow: 0 0 20px rgba(0, 229, 255, 0.3); }
+  50% { box-shadow: 0 0 50px rgba(0, 229, 255, 0.6), 0 0 80px rgba(0, 229, 255, 0.2); }
+}
+
+.animate-glow-pulse {
+  animation: glow-pulse 3s ease-in-out infinite;
+}
+
+/* ─── Section Label ─── */
+.section-label {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.25rem 1rem;
+  border-radius: 9999px;
+  background: rgba(0, 229, 255, 0.06);
+  border: 1px solid rgba(0, 229, 255, 0.2);
+  color: #00E5FF;
+  font-size: 0.65rem;
+  font-family: 'JetBrains Mono', monospace;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.15em;
+}
+
+/* ─── Cyan Button ─── */
+.btn-cyan {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  padding: 0.875rem 2rem;
+  border-radius: 9999px;
+  background: linear-gradient(90deg, #00E5FF, #009DFF);
+  color: #000000;
+  font-weight: 800;
+  font-size: 0.75rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  box-shadow: 0 0 30px rgba(0, 229, 255, 0.4);
+  transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.btn-cyan:hover {
+  opacity: 0.95;
+  transform: translateY(-2px) scale(1.02);
+  box-shadow: 0 0 50px rgba(0, 229, 255, 0.6), 0 10px 30px rgba(0,0,0,0.4);
+}
+
+/* ─── Outline Cyan Button ─── */
+.btn-outline-cyan {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  padding: 0.875rem 2rem;
+  border-radius: 9999px;
+  background: transparent;
+  color: #00E5FF;
+  font-weight: 600;
+  font-size: 0.75rem;
+  letter-spacing: 0.08em;
+  border: 1px solid rgba(0, 229, 255, 0.4);
+  transition: all 0.3s ease;
+}
+
+.btn-outline-cyan:hover {
+  background: rgba(0, 229, 255, 0.08);
+  border-color: rgba(0, 229, 255, 0.7);
+  box-shadow: 0 0 20px rgba(0, 229, 255, 0.2);
+}
+
+/* ─── Timeline line glow ─── */
+.timeline-line {
+  background: linear-gradient(to bottom, transparent, #00E5FF 20%, #009DFF 80%, transparent);
+}
+
+/* ─── Animated gradient border ─── */
+@keyframes border-rotate {
+  from { --angle: 0deg; }
+  to { --angle: 360deg; }
+}
+
+/* ─── Skill Chip ─── */
+.skill-chip {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.5rem 0.875rem;
+  border-radius: 12px;
+  background: rgba(0, 229, 255, 0.04);
+  border: 1px solid rgba(0, 229, 255, 0.1);
+  font-size: 0.75rem;
+  font-weight: 600;
+  color: #e2e8f0;
+  transition: all 0.25s ease;
+  cursor: default;
+}
+
+.skill-chip:hover {
+  background: rgba(0, 229, 255, 0.1);
+  border-color: rgba(0, 229, 255, 0.4);
+  color: #00E5FF;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 16px rgba(0, 229, 255, 0.15);
+}
+
+/* ─── Custom Cursor ─── */
+#custom-cursor-dot {
+  width: 6px;
+  height: 6px;
+  background: #00E5FF;
+  border-radius: 50%;
+  position: fixed;
+  pointer-events: none;
+  z-index: 9999;
+  transform: translate(-50%, -50%);
+  transition: transform 0.05s ease;
+  box-shadow: 0 0 10px rgba(0, 229, 255, 0.8);
+}
+
+#custom-cursor-ring {
+  width: 32px;
+  height: 32px;
+  border: 1.5px solid rgba(0, 229, 255, 0.5);
+  border-radius: 50%;
+  position: fixed;
+  pointer-events: none;
+  z-index: 9998;
+  transform: translate(-50%, -50%);
+  transition: all 0.12s ease;
+}
+
+#custom-cursor-ring.hovered {
+  width: 48px;
+  height: 48px;
+  border-color: rgba(0, 229, 255, 0.8);
+  background: rgba(0, 229, 255, 0.05);
+}
