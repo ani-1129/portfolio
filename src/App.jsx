@@ -35,7 +35,7 @@ export default function App() {
   return (
     <AuthProvider>
       <PortfolioProvider>
-        <BrowserRouter>
+        <BrowserRouter basename={import.meta.env.BASE_URL}>
           <Toaster
             position="top-right"
             toastOptions={{
