@@ -91,37 +91,87 @@
   ],
   "projects": [
     {
-      "_id": "proj_1784573149919",
-      "id": "proj_1784572927418",
-      "title": "Exploratory-Data-Analysis-EDA",
-      "subtitle": "",
-      "category": "dashboards",
-      "featured": false,
-      "num": "09",
+      "id": "support-intelligence",
+      "title": "Customer Support Intelligence Platform",
+      "subtitle": "RAG & LLM Ticket Triage Platform",
+      "category": "ai",
+      "featured": true,
+      "num": "01",
       "status": "Completed",
-      "published": true,
-      "image": "/uploads/thumbnail-1784575851697-878781063.png",
-      "description": "Understanding the factors that influence used car prices is critical for pricing models, procurement decisions, and consumer analytics. This analysis profiles vehicle traits (such as engine features, mileage, brand, and fuel type) to evaluate their direct impact on selling prices and depreciation rates.",
+      "image": "https://images.unsplash.com/photo-1551288049-bebda4e38f71?auto=format&fit=crop&w=1200&q=80",
+      "description": "RAG-driven ticket summarisation, intent extraction, and agent recommendation system. Given a raw support interaction (chat, email, or voice transcript), the platform cleans, anonymises, summarises, and triages tickets into structured action plans.",
       "metrics": [
         {
-          "label": "Metric",
-          "value": "1.0"
+          "label": "MRR Score",
+          "value": "1.000"
+        },
+        {
+          "label": "nDCG@3",
+          "value": "0.890"
+        },
+        {
+          "label": "Intent F1",
+          "value": "0.800"
         }
       ],
       "highlights": [
-        "System architecture highlight"
+        "PII-aware ingestion pipeline (email, phone, SSN, credit card masking) prior to vector indexing in Qdrant.",
+        "2–3 sentence agent-ready summarisation enriched with intent, sentiment score, SLA priority, and NER extractions.",
+        "RAG retrieval architecture featuring cross-encoder reranking, LLM orchestration, and Streamlit agent UI with active human-in-the-loop feedback.",
+        "OAuth2 JWT authentication, granular RBAC, rate-limiting middleware, and production Docker containerization."
       ],
       "tags": [
-        "Python 3.10+",
+        "Python",
+        "FastAPI",
+        "Streamlit",
+        "Qdrant",
+        "RAG",
+        "LLM",
+        "Docker",
+        "JWT"
+      ],
+      "github": "https://github.com/ani-1129/customer-support-intelligence-platform",
+      "demo": "https://support-intelligence-platform.streamlit.app/",
+      "apiDocs": "https://customer-support-api-4xns.onrender.com/docs"
+    },
+    {
+      "id": "data-visualization-fifa",
+      "title": "Data Visualization & Analytics (FIFA 2026)",
+      "subtitle": "Exploratory Data Analysis Showcase",
+      "category": "data",
+      "featured": true,
+      "num": "02",
+      "status": "Completed",
+      "image": "https://images.unsplash.com/photo-1551288049-bebda4e38f71?auto=format&fit=crop&w=1200&q=80",
+      "description": "In-depth exploratory data analysis and visual storytelling utilizing 54,602 player performance records leading up to the FIFA World Cup 2026.",
+      "metrics": [
+        {
+          "label": "Records",
+          "value": "54,602"
+        },
+        {
+          "label": "Features",
+          "value": "75"
+        },
+        {
+          "label": "Type",
+          "value": "EDA"
+        }
+      ],
+      "highlights": [
+        "Analyzed key valuation trends, demographic metrics, and playing style correlations to help sport organizations make data-driven scouting decisions.",
+        "Identified that valuations grow exponentially once overall ratings surpass 8.0, showcasing 'The Superstar Premium'.",
+        "Discovered defensive value gaps and physical trait arbitrages using Pandas, Matplotlib, and Seaborn."
+      ],
+      "tags": [
+        "Python",
         "Pandas",
         "NumPy",
         "Matplotlib",
         "Seaborn",
-        "SciPy"
+        "Jupyter"
       ],
-      "github": "https://github.com/ani-1129/Exploratory-Data-Analysis-EDA",
-      "demo": "",
-      "apiDocs": ""
+      "github": "https://github.com/ani-1129/CodeAlpha_Data-Visualization"
     },
     {
       "id": "fraud-detection",
@@ -129,7 +179,7 @@
       "subtitle": "Real-Time Intelligence Dashboard",
       "category": "dashboards",
       "featured": false,
-      "num": "02",
+      "num": "03",
       "status": "Completed",
       "image": "https://images.unsplash.com/photo-1563986768609-322da13575f3?auto=format&fit=crop&w=1200&q=80",
       "description": "AI-powered fraud intelligence dashboard analyzing financial transactions in real time, surfacing suspicious anomaly patterns through 15+ interactive visualizations.",
@@ -161,8 +211,7 @@
         "Scikit-Learn"
       ],
       "github": "https://github.com/ani-1129",
-      "demo": "https://fraud-detection-system-by-aniket-singh.streamlit.app/",
-      "_id": "fraud-detection"
+      "demo": "https://fraud-detection-system-by-aniket-singh.streamlit.app/"
     },
     {
       "id": "ecommerce-sentiment",
@@ -170,7 +219,7 @@
       "subtitle": "Dynamic Pricing & Review Intelligence",
       "category": "ai",
       "featured": false,
-      "num": "03",
+      "num": "04",
       "status": "Completed",
       "image": "https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&w=1200&q=80",
       "description": "AI-driven pricing engine converting customer reviews into sentiment metrics and recommending optimized dynamic price adjustments across a 5-page analytics dashboard.",
@@ -203,8 +252,7 @@
         "NLP"
       ],
       "github": "https://github.com/ani-1129/ecommerce-sentiment-pricing",
-      "demo": "https://ecommerce-sentiment-pricing-mdndwngpuggu4jpsyfajrp.streamlit.app/",
-      "_id": "ecommerce-sentiment"
+      "demo": "https://ecommerce-sentiment-pricing-mdndwngpuggu4jpsyfajrp.streamlit.app/"
     },
     {
       "id": "telecom-churn",
@@ -212,7 +260,7 @@
       "subtitle": "ML Model Deployment & Analytics",
       "category": "ai",
       "featured": false,
-      "num": "04",
+      "num": "05",
       "status": "Completed",
       "image": "https://images.unsplash.com/photo-1551836022-d5d88e9218df?auto=format&fit=crop&w=1200&q=80",
       "description": "End-to-end machine learning ecosystem for predicting customer churn for 7,043 telecom accounts, complete with FastAPI REST service, MLflow tracking, and Docker Compose orchestration.",
@@ -245,8 +293,7 @@
       ],
       "github": "https://github.com/ani-1129/telecom-churn-ml",
       "demo": "https://churn-dashboard-zszi.onrender.com/",
-      "apiDocs": "https://churn-api-tmje.onrender.com/docs",
-      "_id": "telecom-churn"
+      "apiDocs": "https://churn-api-tmje.onrender.com/docs"
     },
     {
       "id": "ai-job-agent",
@@ -254,7 +301,7 @@
       "subtitle": "Autonomous Career Assistant",
       "category": "ai",
       "featured": false,
-      "num": "05",
+      "num": "06",
       "status": "Completed",
       "image": "https://images.unsplash.com/photo-1507679799987-c73779587ccf?auto=format&fit=crop&w=1200&q=80",
       "description": "Autonomous AI agent leveraging LLMs and RAG to match job requirements, tailor resumes in real time, and generate customized cover letters for recruiters.",
@@ -285,8 +332,7 @@
         "FastAPI"
       ],
       "github": "https://github.com/ani-1129",
-      "demo": "https://github.com/ani-1129",
-      "_id": "ai-job-agent"
+      "demo": "https://github.com/ani-1129"
     },
     {
       "id": "ai-computer-agent",
@@ -294,7 +340,7 @@
       "subtitle": "Autonomous GUI Navigation System",
       "category": "ai",
       "featured": false,
-      "num": "06",
+      "num": "07",
       "status": "Completed",
       "image": "https://images.unsplash.com/photo-1618005182384-a83a8bd57fbe?auto=format&fit=crop&w=1200&q=80",
       "description": "Multimodal AI agent capable of understanding screen coordinates, executing OS terminal commands, and automating complex web navigation tasks.",
@@ -324,8 +370,7 @@
         "FastAPI"
       ],
       "github": "https://github.com/ani-1129",
-      "demo": "https://github.com/ani-1129",
-      "_id": "ai-computer-agent"
+      "demo": "https://github.com/ani-1129"
     },
     {
       "id": "alumni-connect",
@@ -333,7 +378,7 @@
       "subtitle": "Full-Stack Networking Portal",
       "category": "fullstack",
       "featured": false,
-      "num": "07",
+      "num": "08",
       "status": "Completed",
       "image": "https://images.unsplash.com/photo-1522071820081-009f0129c71c?auto=format&fit=crop&w=1200&q=80",
       "description": "Full-stack web application designed for university alumni networking, job postings, and knowledge sharing — bridging students with industry mentors.",
@@ -363,8 +408,40 @@
         "PHP",
         "MySQL"
       ],
-      "github": "https://github.com/ani-1129",
-      "_id": "alumni-connect"
+      "github": "https://github.com/ani-1129"
+    },
+    {
+      "id": "ecommerce-website",
+      "title": "Full-Stack E-Commerce Portal",
+      "subtitle": "Product Management & Checkout System",
+      "category": "fullstack",
+      "featured": false,
+      "num": "09",
+      "status": "Completed",
+      "image": "https://images.unsplash.com/photo-1472851294608-062f824d29cc?auto=format&fit=crop&w=1200&q=80",
+      "description": "E-Commerce web platform featuring interactive product catalogs, cart state management, user authentication, and order processing workflows.",
+      "metrics": [
+        {
+          "label": "Cart State",
+          "value": "Persistent"
+        },
+        {
+          "label": "Database",
+          "value": "Relational"
+        }
+      ],
+      "highlights": [
+        "Product catalog with dynamic filtering, live query search, category sorting, and cart state synchronization.",
+        "User lifecycle management with session handling, secure password hashing, and user order history."
+      ],
+      "tags": [
+        "HTML5",
+        "CSS3",
+        "JavaScript",
+        "PHP",
+        "MySQL"
+      ],
+      "github": "https://github.com/ani-1129"
     },
     {
       "id": "salesforce-crm",
@@ -372,7 +449,7 @@
       "subtitle": "Custom Objects & LWC Development",
       "category": "cloud",
       "featured": false,
-      "num": "09",
+      "num": "10",
       "status": "In Progress",
       "image": "https://images.unsplash.com/photo-1551288049-bebda4e38f71?auto=format&fit=crop&w=1200&q=80",
       "description": "Enterprise exploration in Salesforce Developer Edition implementing custom objects, automated record flows, Apex triggers, and Lightning Web Components (LWC).",
@@ -397,8 +474,7 @@
         "CRM",
         "Flows"
       ],
-      "github": "https://github.com/ani-1129",
-      "_id": "salesforce-crm"
+      "github": "https://github.com/ani-1129"
     }
   ],
   "skills": [
