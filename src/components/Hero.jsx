@@ -102,7 +102,7 @@ export default function Hero() {
       {/* Full background dual-portrait image */}
       <div className="absolute inset-0 pointer-events-none z-[1]">
         <img
-          src="hero-bg.png"
+          src={profileImgSrc}
           alt="Background Portrait"
           className="w-full h-full object-cover object-center"
         />
