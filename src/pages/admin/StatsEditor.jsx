@@ -1,9 +1,21 @@
 import React, { useState, useEffect } from 'react';
 import { usePortfolio } from '../../context/PortfolioContext';
 import { apiFetch } from '../../api/client';
-import { BarChart2, Save, CheckCircle2, Plus, Trash2, Lock } from 'lucide-react';
+import { BarChart2, Save, CheckCircle2, Plus, Trash2, Lock, FolderGit2, Code2, Layers, GraduationCap, Users, Star, Award, Zap } from 'lucide-react';
 import toast from 'react-hot-toast';
 import ConfirmModal from '../../components/common/ConfirmModal';
+
+const AVAILABLE_ICONS = [
+  { name: 'FolderGit2', icon: FolderGit2, label: 'Projects/Git' },
+  { name: 'Code2', icon: Code2, label: 'Code' },
+  { name: 'Layers', icon: Layers, label: 'Stack/Layers' },
+  { name: 'GraduationCap', icon: GraduationCap, label: 'Education' },
+  { name: 'BarChart2', icon: BarChart2, label: 'Stats/Chart' },
+  { name: 'Users', icon: Users, label: 'Users/Clients' },
+  { name: 'Star', icon: Star, label: 'Star/Rating' },
+  { name: 'Award', icon: Award, label: 'Award' },
+  { name: 'Zap', icon: Zap, label: 'Performance' },
+];
 
 export default function StatsEditor() {
   const { content, refetch } = usePortfolio();
@@ -139,8 +151,25 @@ export default function StatsEditor() {
                 </div>
               )}
 
-              <div className="w-10 h-10 rounded-xl bg-white/5 border border-white/10 flex items-center justify-center text-cyan-primary mt-4">
-                <BarChart2 className="w-5 h-5" />
+              <div className="flex items-center gap-3 mt-4">
+                <div className="w-10 h-10 rounded-xl bg-white/5 border border-white/10 flex items-center justify-center text-cyan-primary">
+                  {(() => {
+                    const IconObj = AVAILABLE_ICONS.find(i => i.name === stat.icon);
+                    const SelectedIcon = IconObj ? IconObj.icon : BarChart2;
+                    return <SelectedIcon className="w-5 h-5" />;
+                  })()}
+                </div>
+                <select
+                  value={stat.icon || 'BarChart2'}
+                  onChange={(e) => handleChange(i, 'icon', e.target.value)}
+                  className="flex-1 bg-white/5 border border-white/10 rounded-xl px-3 py-2 text-xs text-white outline-none focus:border-cyan-primary transition-colors appearance-none"
+                >
+                  {AVAILABLE_ICONS.map(ico => (
+                    <option key={ico.name} value={ico.name} className="bg-[#05070D]">
+                      {ico.label}
+                    </option>
+                  ))}
+                </select>
               </div>
 
               <div>

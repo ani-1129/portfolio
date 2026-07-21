@@ -1,9 +1,9 @@
 import React, { useEffect, useRef } from 'react';
 import { motion } from 'framer-motion';
 import { usePortfolio } from '../context/PortfolioContext';
-import { FolderGit2, Code2, Layers, GraduationCap, BarChart2 } from 'lucide-react';
+import { FolderGit2, Code2, Layers, GraduationCap, BarChart2, Users, Star, Award, Zap } from 'lucide-react';
 
-const iconMap = { FolderGit2, Code2, Layers, GraduationCap, BarChart2 };
+const iconMap = { FolderGit2, Code2, Layers, GraduationCap, BarChart2, Users, Star, Award, Zap };
 
 function CountUp({ target, duration = 1800 }) {
   const ref = useRef(null);
