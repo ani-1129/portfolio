@@ -122,7 +122,7 @@ export default function AboutEditor() {
               value={profileImage}
               onChange={(e) => setProfileImage(e.target.value)}
               className="w-full px-4 py-3 rounded-2xl bg-white/[0.03] border border-white/10 text-sm text-white focus:border-cyan-primary focus:outline-none"
-              placeholder="Leave blank to use Hero image..."
+              placeholder="Upload or enter image URL..."
             />
             <label className="flex-shrink-0 cursor-pointer px-4 py-3 rounded-2xl bg-white/5 border border-white/10 hover:border-cyan-primary/50 transition-all flex items-center justify-center">
               <input
