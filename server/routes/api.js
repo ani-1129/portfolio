@@ -110,6 +110,24 @@ if (fs.existsSync(DB_FILE)) {
     if (memoryStore.projects && Array.isArray(memoryStore.projects)) {
       memoryStore.projects = memoryStore.projects.map(p => ({ ...p, _id: p._id || p.id || 'proj_' + Date.now() }));
     }
+    // Patch existing relative /uploads to absolute URLs for Cloudflare frontend
+    const fixUrls = (obj) => {
+      if (Array.isArray(obj)) return obj.map(fixUrls);
+      if (obj && typeof obj === 'object') {
+        const newObj = {};
+        for (const key in obj) {
+          if (typeof obj[key] === 'string' && obj[key].startsWith('/uploads/')) {
+            newObj[key] = `https://portfolio-bcwq.onrender.com${obj[key]}`;
+          } else {
+            newObj[key] = fixUrls(obj[key]);
+          }
+        }
+        return newObj;
+      }
+      return obj;
+    };
+    memoryStore = fixUrls(memoryStore);
+
     console.log('📂 Loaded existing DB store from disk.');
   } catch (err) {
     console.log('Initializing fresh store.');
@@ -355,12 +373,12 @@ router.post('/projects/:id/upload', authenticateToken, upload.fields([
     const project = memoryStore.projects[idx];
     const files = req.files || {};
 
-    if (files.thumbnail?.[0]) project.image = `/uploads/${files.thumbnail[0].filename}`;
-    if (files.cover?.[0]) project.coverImage = `/uploads/${files.cover[0].filename}`;
-    if (files.architectureDiagram?.[0]) project.architectureDiagram = `/uploads/${files.architectureDiagram[0].filename}`;
+    if (files.thumbnail?.[0]) project.image = `https://portfolio-bcwq.onrender.com/uploads/${files.thumbnail[0].filename}`;
+    if (files.cover?.[0]) project.coverImage = `https://portfolio-bcwq.onrender.com/uploads/${files.cover[0].filename}`;
+    if (files.architectureDiagram?.[0]) project.architectureDiagram = `https://portfolio-bcwq.onrender.com/uploads/${files.architectureDiagram[0].filename}`;
     if (files.gallery) {
       project.galleryImages = (project.galleryImages || []).concat(
-        files.gallery.map(f => `/uploads/${f.filename}`)
+        files.gallery.map(f => `https://portfolio-bcwq.onrender.com/uploads/${f.filename}`)
       );
     }
 
@@ -479,7 +497,7 @@ router.put('/theme', authenticateToken, async (req, res) => {
 router.post('/media/upload', authenticateToken, upload.single('file'), async (req, res) => {
   try {
     if (!req.file) return res.status(400).json({ message: 'No file provided' });
-    const url = `/uploads/${req.file.filename}`;
+    const url = `https://portfolio-bcwq.onrender.com/uploads/${req.file.filename}`;
     const media = {
       _id: 'media_' + Date.now(),
       fileName: req.file.originalname,
