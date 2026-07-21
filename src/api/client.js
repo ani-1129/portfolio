@@ -10,6 +10,7 @@ export async function apiFetch(endpoint, options = {}) {
 
   try {
     const res = await fetch(`${BASE_URL}${endpoint}`, {
+      cache: 'no-store',
       ...options,
       headers
     });
