@@ -177,7 +177,7 @@ export default function Projects() {
 
                   {/* Number Badge */}
                   <div className="absolute top-3 left-3 px-3 py-1 rounded-full text-[10px] font-mono" style={{ background: 'rgba(0,0,0,0.6)', backdropFilter: 'blur(8px)', border: '1px solid rgba(0,229,255,0.2)', color: CYAN }}>
-                    // {project.num || `0${idx + 1}`}
+                    {String(idx + 1).padStart(2, '0')} // {project.category ? project.category.toUpperCase() : 'AI'}
                   </div>
 
                   {/* Hover open button */}

@@ -168,7 +168,7 @@ export default function ProjectsEditor() {
 
       {/* Projects List Grid */}
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-        {projects.map((p) => {
+        {projects.map((p, index) => {
           const projId = p._id || p.id;
           return (
             <div key={projId || p.title} className="p-5 rounded-3xl glass-panel flex flex-col justify-between group relative">
@@ -176,7 +176,7 @@ export default function ProjectsEditor() {
                 <div className="relative h-40 rounded-2xl overflow-hidden mb-4 bg-dark-950">
                   <img src={p.image} alt={p.title} className="w-full h-full object-cover" />
                   <div className="absolute top-2 left-2 px-2.5 py-0.5 rounded-full bg-black/70 text-[10px] font-mono text-cyan-primary">
-                    {p.num || '01'} // {p.category ? p.category.toUpperCase() : 'AI'}
+                    {String(index + 1).padStart(2, '0')} // {p.category ? p.category.toUpperCase() : 'AI'}
                   </div>
                   {p.featured && (
                     <div className="absolute top-2 right-2 px-2.5 py-0.5 rounded-full text-black text-[10px] font-bold" style={{ background: 'linear-gradient(90deg,#00E5FF,#009DFF)', boxShadow: '0 0 12px rgba(0,229,255,0.4)' }}>
