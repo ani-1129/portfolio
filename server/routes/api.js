@@ -9,6 +9,12 @@ import {
   User, Hero, Navbar, About, Stats, Skill, Project, Experience, Timeline, Service, Testimonial, ContactInfo, Message, Resume, Seo, Theme, Media
 } from '../models/schemas.js';
 
+// Define a simple schema to hold the entire store object
+const StoreSchema = new mongoose.Schema({
+  data: { type: mongoose.Schema.Types.Mixed }
+});
+const Store = mongoose.model('Store', StoreSchema);
+
 import { projectsData } from '../../src/data/projectsData.js';
 import { skillsCategories } from '../../src/data/skillsData.js';
 import { educationData, certificationsData } from '../../src/data/timelineData.js';
@@ -136,9 +142,31 @@ if (fs.existsSync(DB_FILE)) {
   fs.writeFileSync(DB_FILE, JSON.stringify(initialStore, null, 2));
 }
 
+// Function to load store from MongoDB
+export async function loadStoreFromMongo() {
+  if (mongoose.connection.readyState >= 1) {
+    try {
+      const storeDoc = await Store.findOne();
+      if (storeDoc && storeDoc.data) {
+        memoryStore = storeDoc.data;
+        console.log('📂 Loaded existing DB store from MongoDB.');
+        // Update local file just in case
+        fs.writeFileSync(DB_FILE, JSON.stringify(memoryStore, null, 2));
+      }
+    } catch (err) {
+      console.error('Failed to load store from MongoDB:', err);
+    }
+  }
+}
+
 function saveStoreToDisk() {
   try {
     fs.writeFileSync(DB_FILE, JSON.stringify(memoryStore, null, 2));
+    if (mongoose.connection.readyState >= 1) {
+      Store.findOneAndUpdate({}, { data: memoryStore }, { upsert: true }).catch(err => {
+        console.error('Failed to save to MongoDB:', err);
+      });
+    }
   } catch (err) {
     console.error('Failed to save store to disk:', err);
   }
@@ -373,12 +401,19 @@ router.post('/projects/:id/upload', authenticateToken, upload.fields([
     const project = memoryStore.projects[idx];
     const files = req.files || {};
 
-    if (files.thumbnail?.[0]) project.image = `https://portfolio-bcwq.onrender.com/uploads/${files.thumbnail[0].filename}`;
-    if (files.cover?.[0]) project.coverImage = `https://portfolio-bcwq.onrender.com/uploads/${files.cover[0].filename}`;
-    if (files.architectureDiagram?.[0]) project.architectureDiagram = `https://portfolio-bcwq.onrender.com/uploads/${files.architectureDiagram[0].filename}`;
+    const toBase64 = (file) => {
+      const fileData = fs.readFileSync(file.path);
+      const base64String = fileData.toString('base64');
+      fs.unlinkSync(file.path); // Remove temp file
+      return `data:${file.mimetype};base64,${base64String}`;
+    };
+
+    if (files.thumbnail?.[0]) project.image = toBase64(files.thumbnail[0]);
+    if (files.cover?.[0]) project.coverImage = toBase64(files.cover[0]);
+    if (files.architectureDiagram?.[0]) project.architectureDiagram = toBase64(files.architectureDiagram[0]);
     if (files.gallery) {
       project.galleryImages = (project.galleryImages || []).concat(
-        files.gallery.map(f => `https://portfolio-bcwq.onrender.com/uploads/${f.filename}`)
+        files.gallery.map(f => toBase64(f))
       );
     }
 
@@ -497,7 +532,15 @@ router.put('/theme', authenticateToken, async (req, res) => {
 router.post('/media/upload', authenticateToken, upload.single('file'), async (req, res) => {
   try {
     if (!req.file) return res.status(400).json({ message: 'No file provided' });
-    const url = `https://portfolio-bcwq.onrender.com/uploads/${req.file.filename}`;
+    
+    // Read file, convert to Base64 data URI, then delete the temp file
+    const fileData = fs.readFileSync(req.file.path);
+    const base64String = fileData.toString('base64');
+    const url = `data:${req.file.mimetype};base64,${base64String}`;
+    
+    // Attempt to delete local file to save disk space
+    try { fs.unlinkSync(req.file.path); } catch(e) {}
+    
     const media = {
       _id: 'media_' + Date.now(),
       fileName: req.file.originalname,

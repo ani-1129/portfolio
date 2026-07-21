@@ -36,7 +36,7 @@ export default function HeroEditor() {
       const uploadedMedia = await res.json();
       setFormData(prev => ({ 
         ...prev, 
-        profileImage: `https://portfolio-bcwq.onrender.com${uploadedMedia.url}` 
+        profileImage: uploadedMedia.url 
       }));
     } catch (err) {
       alert('Upload failed: ' + err.message);
