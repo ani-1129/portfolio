@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { usePortfolio } from '../../context/PortfolioContext';
 import { apiFetch } from '../../api/client';
-import { User, Save, CheckCircle2, Plus, Trash2 } from 'lucide-react';
+import { User, Save, CheckCircle2, Plus, Trash2, Upload } from 'lucide-react';
 
 export default function AboutEditor() {
   const { content, refetch } = usePortfolio();
@@ -14,6 +14,33 @@ export default function AboutEditor() {
   );
   const [saving, setSaving] = useState(false);
   const [savedSuccess, setSavedSuccess] = useState(false);
+  const [profileImage, setProfileImage] = useState(content.about?.profileImage || '');
+  const [uploadingImage, setUploadingImage] = useState(false);
+
+  const handleImageUpload = async (e) => {
+    const file = e.target.files[0];
+    if (!file) return;
+
+    setUploadingImage(true);
+    const data = new FormData();
+    data.append('file', file);
+
+    try {
+      const token = localStorage.getItem('adminToken');
+      const res = await fetch('https://portfolio-bcwq.onrender.com/api/media/upload', {
+        method: 'POST',
+        headers: { Authorization: `Bearer ${token}` },
+        body: data
+      });
+      if (!res.ok) throw new Error('Upload failed');
+      const uploadedMedia = await res.json();
+      setProfileImage(`https://portfolio-bcwq.onrender.com${uploadedMedia.url}`);
+    } catch (err) {
+      alert('Upload failed: ' + err.message);
+    } finally {
+      setUploadingImage(false);
+    }
+  };
 
   // Biography Helpers
   const addBioParagraph = () => setBiography([...biography, 'New biography paragraph content...']);
@@ -32,7 +59,8 @@ export default function AboutEditor() {
         body: JSON.stringify({
           heading,
           checklist,
-          biography
+          biography,
+          profileImage
         })
       });
       await refetch();
@@ -81,6 +109,35 @@ export default function AboutEditor() {
             onChange={(e) => setHeading(e.target.value)}
             className="w-full px-4 py-3 rounded-2xl bg-white/[0.03] border border-white/10 text-sm text-white focus:border-cyan-primary focus:outline-none"
           />
+        </div>
+
+        {/* Profile Image Upload */}
+        <div>
+          <label className="block text-xs font-mono text-gray-300 uppercase tracking-wider mb-2">
+            About Section Profile Photo (Optional override)
+          </label>
+          <div className="flex gap-2">
+            <input
+              type="text"
+              value={profileImage}
+              onChange={(e) => setProfileImage(e.target.value)}
+              className="w-full px-4 py-3 rounded-2xl bg-white/[0.03] border border-white/10 text-sm text-white focus:border-cyan-primary focus:outline-none"
+              placeholder="Leave blank to use Hero image..."
+            />
+            <label className="flex-shrink-0 cursor-pointer px-4 py-3 rounded-2xl bg-white/5 border border-white/10 hover:border-cyan-primary/50 transition-all flex items-center justify-center">
+              <input
+                type="file"
+                accept="image/*"
+                onChange={handleImageUpload}
+                className="hidden"
+              />
+              {uploadingImage ? (
+                <span className="text-xs font-bold text-cyan-primary animate-pulse">Uploading...</span>
+              ) : (
+                <Upload className="w-5 h-5 text-gray-400 hover:text-cyan-primary transition-colors" />
+              )}
+            </label>
+          </div>
         </div>
 
         {/* Biography Paragraphs List */}
