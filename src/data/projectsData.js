@@ -11,6 +11,20 @@ export const projectsData = [
     description: "RAG-driven ticket summarisation, intent extraction, and agent recommendation system. Given a raw support interaction (chat, email, or voice transcript), the platform cleans, anonymises, summarises, and triages tickets into structured action plans.",
     metrics: [
       { label: "MRR Score", value: "1.000" },
+      { label: "nDCG@3", value: "0.890" },
+      { label: "Intent F1", value: "0.800" }
+    ],
+    highlights: [
+      "PII-aware ingestion pipeline (email, phone, SSN, credit card masking) prior to vector indexing in Qdrant.",
+      "2–3 sentence agent-ready summarisation enriched with intent, sentiment score, SLA priority, and NER extractions.",
+      "RAG retrieval architecture featuring cross-encoder reranking, LLM orchestration, and Streamlit agent UI with active human-in-the-loop feedback.",
+      "OAuth2 JWT authentication, granular RBAC, rate-limiting middleware, and production Docker containerization."
+    ],
+    tags: ["Python", "FastAPI", "Streamlit", "Qdrant", "RAG", "LLM", "Docker", "JWT"],
+    github: "https://github.com/ani-1129/customer-support-intelligence-platform",
+    demo: "https://support-intelligence-platform.streamlit.app/",
+    apiDocs: "https://customer-support-api-4xns.onrender.com/docs"
+  },
   {
     id: "data-visualization-fifa",
     title: "Data Visualization & Analytics (FIFA 2026)",
@@ -24,21 +38,15 @@ export const projectsData = [
     metrics: [
       { label: "Records", value: "54,602" },
       { label: "Features", value: "75" },
-      { label: "Type", value: "EDA" },
-      { label: "nDCG@3", value: "0.890" },
-      { label: "ROUGE-1", value: "0.436" },
-      { label: "Intent F1", value: "0.800" }
+      { label: "Type", value: "EDA" }
     ],
     highlights: [
-      "PII-aware ingestion pipeline (email, phone, SSN, credit card masking) prior to vector indexing in Qdrant.",
-      "2–3 sentence agent-ready summarisation enriched with intent, sentiment score, SLA priority, and NER extractions.",
-      "RAG retrieval architecture featuring cross-encoder reranking, LLM orchestration, and Streamlit agent UI with active human-in-the-loop feedback.",
-      "OAuth2 JWT authentication, granular RBAC, rate-limiting middleware, and production Docker containerization."
+      "Analyzed key valuation trends, demographic metrics, and playing style correlations to help sport organizations make data-driven scouting decisions.",
+      "Identified that valuations grow exponentially once overall ratings surpass 8.0, showcasing 'The Superstar Premium'.",
+      "Discovered defensive value gaps and physical trait arbitrages using Pandas, Matplotlib, and Seaborn."
     ],
-    tags: ["Python", "FastAPI", "Streamlit", "Qdrant", "RAG", "LLM", "Docker", "JWT"],
-    github: "https://github.com/ani-1129/customer-support-intelligence-platform",
-    demo: "https://support-intelligence-platform.streamlit.app/",
-    apiDocs: "https://customer-support-api-4xns.onrender.com/docs"
+    tags: ["Python", "Pandas", "NumPy", "Matplotlib", "Seaborn", "Jupyter"],
+    github: "https://github.com/ani-1129/CodeAlpha_Data-Visualization"
   },
   {
     id: "fraud-detection",
@@ -224,14 +232,5 @@ export const projectsData = [
     ],
     tags: ["Salesforce", "Apex", "LWC", "CRM", "Flows"],
     github: "https://github.com/ani-1129"
-  }
-],
-    highlights: [
-      "Analyzed key valuation trends, demographic metrics, and playing style correlations to help sport organizations make data-driven scouting decisions.",
-      "Identified that valuations grow exponentially once overall ratings surpass 8.0, showcasing 'The Superstar Premium'.",
-      "Discovered defensive value gaps and physical trait arbitrages using Pandas, Matplotlib, and Seaborn."
-    ],
-    tags: ["Python", "Pandas", "NumPy", "Matplotlib", "Seaborn", "Jupyter"],
-    github: "https://github.com/ani-1129/CodeAlpha_Data-Visualization"
   }
 ];
