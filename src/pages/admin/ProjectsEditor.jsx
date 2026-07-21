@@ -121,7 +121,7 @@ export default function ProjectsEditor() {
         if (thumbnailFile) formData.append('thumbnail', thumbnailFile);
         galleryFiles.forEach(file => formData.append('gallery', file));
         
-        const uploadRes = await fetch(`http://localhost:5000/api/projects/${targetId}/upload`, {
+        const uploadRes = await fetch(`https://portfolio-bcwq.onrender.com/api/projects/${targetId}/upload`, {
           method: 'POST',
           headers: {
             'Authorization': `Bearer ${localStorage.getItem('adminToken')}`

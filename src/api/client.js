@@ -1,4 +1,4 @@
-const BASE_URL = import.meta.env.VITE_API_URL || (import.meta.env.PROD ? 'https://portfolio-bcwq.onrender.com/api' : 'http://localhost:5000/api');
+const BASE_URL = 'https://portfolio-bcwq.onrender.com/api';
 
 export async function apiFetch(endpoint, options = {}) {
   const token = localStorage.getItem('adminToken');

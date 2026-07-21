@@ -22,7 +22,7 @@ export default function ResumeEditor() {
 
     try {
       const token = localStorage.getItem('adminToken');
-      const res = await fetch('http://localhost:5000/api/media/upload', {
+      const res = await fetch('https://portfolio-bcwq.onrender.com/api/media/upload', {
         method: 'POST',
         headers: { Authorization: `Bearer ${token}` },
         body: formData
