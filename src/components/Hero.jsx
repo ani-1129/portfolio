@@ -91,7 +91,7 @@ export default function Hero() {
   const nameParts = (heroData.name || 'ANIKET SINGH').split(' ');
   const firstName = nameParts[0] || 'ANIKET';
   const lastName = nameParts.slice(1).join(' ') || 'SINGH';
-  const profileImgSrc = heroData.profileImage || 'photo.jpg';
+  const profileImgSrc = '/hero-bg.png';
   const resumeUrl = content.resume?.fileUrl || 'resume.pdf';
 
   return (

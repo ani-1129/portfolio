@@ -14,7 +14,7 @@ export default function About() {
   const { content } = usePortfolio();
   const about = content.about || {};
   const hero = content.hero || {};
-  const profileImgSrc = about.profileImage || 'photo.jpg';
+  const profileImgSrc = '/profile_image.jpeg';
   const [modalOpen, setModalOpen] = useState(false);
 
   const checklist = about.checklist || [
